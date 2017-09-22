@@ -1,7 +1,9 @@
-package com.wuwei.tedunote.tedunote;
+package com.wuwei.tedunote;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.wuwei.tedunote.tedunote.R;
 
 public class MainActivity extends AppCompatActivity {
 

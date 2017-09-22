@@ -3,4 +3,9 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="core_line">#ff999999</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="green_weixin">#9de96a</color>
+    <color name="red_weibo">#fd8040</color>
 </resources>
