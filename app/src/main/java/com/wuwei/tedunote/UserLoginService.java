@@ -11,6 +11,6 @@ import retrofit2.http.Query;
 public interface UserLoginService {
 
     @POST("user/login.do")
-    Call<String> login(@Query("name") String username, @Query("password") String password);
+    Call<ResponseBody<User>> login(@Query("name") String username, @Query("password") String password);
 
 }
