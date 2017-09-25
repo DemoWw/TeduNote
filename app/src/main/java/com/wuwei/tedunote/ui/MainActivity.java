@@ -1,4 +1,4 @@
-package com.wuwei.tedunote;
+package com.wuwei.tedunote.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

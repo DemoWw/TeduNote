@@ -1,4 +1,7 @@
-package com.wuwei.tedunote;
+package com.wuwei.tedunote.retrofit;
+
+import com.wuwei.tedunote.entity.ResponseBody;
+import com.wuwei.tedunote.entity.User;
 
 import retrofit2.Call;
 import retrofit2.http.POST;

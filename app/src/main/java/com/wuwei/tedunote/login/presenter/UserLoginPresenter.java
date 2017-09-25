@@ -1,10 +1,15 @@
-package com.wuwei.tedunote;
+package com.wuwei.tedunote.login.presenter;
+
+import com.wuwei.tedunote.entity.User;
+import com.wuwei.tedunote.login.model.UserModelImpl;
+import com.wuwei.tedunote.login.model.IUserModel;
+import com.wuwei.tedunote.login.view.IUserLoginView;
 
 /**
  * Created by wuwei on 2017/9/23.
  */
 
-public class UserLoginPresenter implements OnUserLoginListener{
+public class UserLoginPresenter implements OnUserLoginListener {
 
     private IUserModel model;
 

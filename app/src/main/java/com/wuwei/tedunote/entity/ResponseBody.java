@@ -1,4 +1,4 @@
-package com.wuwei.tedunote;
+package com.wuwei.tedunote.entity;
 
 /**
  * Created by wuwei on 2017/9/23.

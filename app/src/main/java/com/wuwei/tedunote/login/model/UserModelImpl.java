@@ -1,4 +1,9 @@
-package com.wuwei.tedunote;
+package com.wuwei.tedunote.login.model;
+
+import com.wuwei.tedunote.login.presenter.OnUserLoginListener;
+import com.wuwei.tedunote.entity.ResponseBody;
+import com.wuwei.tedunote.entity.User;
+import com.wuwei.tedunote.retrofit.UserLoginService;
 
 import retrofit2.Call;
 import retrofit2.Callback;

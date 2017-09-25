@@ -1,4 +1,4 @@
-package com.wuwei.tedunote;
+package com.wuwei.tedunote.ui;
 
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputLayout;
@@ -7,12 +7,16 @@ import android.text.TextWatcher;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.wuwei.tedunote.entity.User;
+import com.wuwei.tedunote.login.presenter.UserLoginPresenter;
+import com.wuwei.tedunote.login.view.IUserLoginView;
 import com.wuwei.tedunote.tedunote.R;
+import com.wuwei.tedunote.utils.TextValidator;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class LoginActivity extends BaseActivity implements TextWatcher, IUserLoginView{
+public class LoginActivity extends BaseActivity implements TextWatcher, IUserLoginView {
 
     @BindView(R.id.til_username)
     TextInputLayout mTilUsername;

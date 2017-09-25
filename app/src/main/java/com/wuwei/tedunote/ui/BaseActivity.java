@@ -1,4 +1,4 @@
-package com.wuwei.tedunote;
+package com.wuwei.tedunote.ui;
 
 import android.os.Bundle;
 import android.os.PersistableBundle;

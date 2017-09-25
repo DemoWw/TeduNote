@@ -1,4 +1,6 @@
-package com.wuwei.tedunote;
+package com.wuwei.tedunote.login.model;
+
+import com.wuwei.tedunote.login.presenter.OnUserLoginListener;
 
 /**
  * Created by wuwei on 2017/9/23.
