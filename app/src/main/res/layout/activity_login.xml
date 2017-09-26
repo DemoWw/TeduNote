@@ -1,150 +1,179 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.wuwei.tedunote.ui.LoginActivity"
-    >
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="cn.tedu.tedunote.ui.LoginActivity">
 
-    <ImageView
-        android:id="@+id/iv_logo_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher_round"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"
-        />
-
-    <android.support.design.widget.TextInputLayout
+    <EditText
+        android:id="@+id/et_hidden"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/iv_logo_login"
-        android:layout_marginTop="40dp"
-        android:id="@+id/til_username"
-        android:hint="用户名"
-        android:layout_centerInParent="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        >
-        <EditText
-            android:id="@+id/et_username"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_username"
-            android:text="admin"
-            />
-    </android.support.design.widget.TextInputLayout>
+        android:layout_above="@+id/rl_logo">
 
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/til_password"
-        android:layout_below="@+id/til_username"
-        android:hint="密码"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        >
-        <EditText
-            android:id="@+id/et_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="admin"
-            android:inputType="textPassword"
-            />
-    </android.support.design.widget.TextInputLayout>
+        <requestFocus />
+    </EditText>
 
-    <Button
-        android:id="@+id/btn_login"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_below="@+id/til_password"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="15dp"
-        android:text="登陆"
-        android:background="@drawable/btn_selector_login"
-        android:textSize="@dimen/text_size_default"
-        android:textColor="@color/textColorPrimary"
-        />
-
+    <!-- Logo -->
     <RelativeLayout
+        android:id="@+id/rl_logo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_below="@+id/btn_login"
-        android:layout_marginTop="10dp"
-        >
-        <TextView
-            android:id="@+id/tv_forget"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="忘记密码"
-            android:textSize="@dimen/text_size_default"
-            android:clickable="true"
-            android:background="?attr/selectableItemBackground"
-            />
-        <View
-            android:id="@+id/view_line"
-            android:layout_width="2dp"
-            android:layout_height="15dp"
-            android:background="@color/core_line"
-            android:layout_toRightOf="@+id/tv_forget"
-            android:layout_marginLeft="10dp"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="注册账号"
-            android:layout_toRightOf="@+id/view_line"
-            android:textSize="@dimen/text_size_default"
-            android:layout_marginLeft="10dp"
-            />
+        android:layout_above="@+id/ll_login_form"
+        android:layout_alignParentTop="true">
 
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_launcher" />
     </RelativeLayout>
 
-    <Button
-        android:id="@+id/btn_weixin"
-        android:layout_width="match_parent"
-        android:layout_height="36dp"
-        android:layout_above="@+id/btn_weibo"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:text="微信登陆"
-        android:textSize="@dimen/text_size_default"
-        android:textColor="@color/textColorPrimary"
-        android:background="@drawable/btn_selector_green"
-        android:drawableLeft="@drawable/ic_weixin"
-        android:padding="6dp"
-        android:drawablePadding="-33dp"
-        />
-
-    <Button
-        android:id="@+id/btn_weibo"
-        android:layout_width="match_parent"
-        android:layout_height="36dp"
-        android:layout_above="@+id/tv_address"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:text="微博登陆"
-        android:textSize="@dimen/text_size_default"
-        android:textColor="@color/textColorPrimary"
-        android:background="@drawable/btn_selector_red"
-        android:layout_marginTop="10dp"
-        android:drawableLeft="@drawable/ic_weibo"
-        android:padding="6dp"
-        android:drawablePadding="-33dp"
-        />
-    <TextView
-        android:id="@+id/tv_address"
+    <!-- 登录表单 -->
+    <LinearLayout
+        android:id="@+id/ll_login_form"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:textSize="@dimen/text_size_small"
-        android:text="www.tedu.com"
-        android:layout_alignParentBottom="true"
-        android:gravity="center"
-        />
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_username_wrapper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="用户名">
+
+            <EditText
+                android:id="@+id/et_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="text"
+                android:text="demo" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_password_wrapper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="密码">
+
+            <EditText
+                android:id="@+id/et_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:text="123456" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height_default"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/selector_button_main"
+            android:text="登录"
+            android:textColor="@color/text_color_white" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_forget_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:minHeight="0dp"
+                android:minWidth="0dp"
+                android:text="忘记密码"
+                android:textColor="@color/text_color_light"
+                android:textSize="@dimen/text_size_default" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="|" />
+
+            <Button
+                android:id="@+id/btn_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:minHeight="0dp"
+                android:minWidth="0dp"
+                android:text="注册账号"
+                android:textColor="@color/text_color_light"
+                android:textSize="@dimen/text_size_default" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 第三方登录 -->
+    <LinearLayout
+        android:id="@+id/ll_login_other"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rl_copyright"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_login_by_weixin"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height_default"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:background="@drawable/selector_button_green"
+            android:drawableLeft="@drawable/ic_weixin"
+            android:drawablePadding="-33dp"
+            android:padding="6dp"
+            android:text="微信登录"
+            android:textColor="@color/text_color_white" />
+
+        <Button
+            android:id="@+id/btn_login_by_weibo"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height_default"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/selector_button_orange"
+            android:drawableLeft="@drawable/ic_weibo"
+            android:drawablePadding="-33dp"
+            android:padding="6dp"
+            android:text="微博登录"
+            android:textColor="@color/text_color_white" />
+    </LinearLayout>
+
+    <!-- 版权 -->
+    <RelativeLayout
+        android:id="@+id/rl_copyright"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/tv_copyright"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="www.tedu.cn" />
+
+    </RelativeLayout>
 
 
 </RelativeLayout>

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TeduNote</string>
+
+    <string name="register">注册</string>
 </resources>

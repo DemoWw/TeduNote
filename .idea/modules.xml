@@ -3,9 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TeduNote.iml" filepath="$PROJECT_DIR$/TeduNote.iml" />
-      <module fileurl="file://$PROJECT_DIR$/TeduNote.iml" filepath="$PROJECT_DIR$/TeduNote.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app_old/app_old.iml" filepath="$PROJECT_DIR$/app_old/app_old.iml" />
     </modules>
   </component>
 </project>
