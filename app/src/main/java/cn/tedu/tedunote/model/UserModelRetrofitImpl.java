@@ -1,11 +1,14 @@
 package cn.tedu.tedunote.model;
 
+import android.content.Context;
 import android.util.Log;
 
 import cn.tedu.tedunote.entity.ResponseBody;
 import cn.tedu.tedunote.entity.User;
 import cn.tedu.tedunote.model.service.UserLoginService;
 import cn.tedu.tedunote.presenter.OnUserLoginListener;
+import cn.tedu.tedunote.util.SettingUtils;
+import okhttp3.Headers;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -13,6 +16,8 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
+
+import static cn.tedu.tedunote.util.Server.BASE_URL;
 
 /**
  * Created by tarena on 2017/9/23.
@@ -22,15 +27,14 @@ class UserModelRetrofitImpl implements IUserModel {
 
     public UserModelRetrofitImpl() {
         // [1] 创建Retrofit对象
-        String baseUrl = "http://172.60.50.72:8080/note/";
         Retrofit.Builder builder = new Retrofit.Builder();
-        builder.baseUrl(baseUrl);
+        builder.baseUrl(BASE_URL);
         builder.addConverterFactory(GsonConverterFactory.create());
         mRetrofit = builder.build();
     }
 
     @Override
-    public void login(String username, String password, final OnUserLoginListener onUserLoginListener) {
+    public void login(final Context context, String username, String password, final OnUserLoginListener onUserLoginListener) {
         // [3] 获得业务接口对象
         UserLoginService service = mRetrofit.create(UserLoginService.class);
 
@@ -44,6 +48,12 @@ class UserModelRetrofitImpl implements IUserModel {
                 ResponseBody<User> responseBody = response.body();
                 if (responseBody.getState() == 0) {
                     onUserLoginListener.onLoginSuccess(responseBody.getData());
+                    //登陆成功，将用户信息保存到偏好设置
+                    SettingUtils.saveUserInfo(context, responseBody.getData());
+                    // 保存Cookie信息
+                    Headers headers = response.headers();
+                    String cookie = headers.get("Set-Cookie").split(";")[0];
+                    SettingUtils.saveUserCookie(context, cookie);
                 } else {
                     onUserLoginListener.onLoginFailure(responseBody.getState(), responseBody.getMessage());
                 }

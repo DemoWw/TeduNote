@@ -65,7 +65,7 @@ public class LoginActivity extends BaseActivity implements TextWatcher, IUserLog
         String password = tilPasswordWrapper.getEditText().getText().toString();
 
         // 向服务器提交用户名与密码，并获取登录结果
-        presenter.login(username, password);
+        presenter.login(this, username, password);
 
         // 禁用登录按钮
         btnLogin.setEnabled(false);
@@ -108,6 +108,10 @@ public class LoginActivity extends BaseActivity implements TextWatcher, IUserLog
 
         // 启用登录按钮
         btnLogin.setEnabled(true);
+
+        // 跳转到主界面
+        startActivity(new Intent(this, MainActivity.class));
+        // TODO 销毁自身
     }
 
     @Override

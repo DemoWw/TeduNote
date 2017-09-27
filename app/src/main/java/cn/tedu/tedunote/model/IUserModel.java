@@ -1,5 +1,7 @@
 package cn.tedu.tedunote.model;
 
+import android.content.Context;
+
 import cn.tedu.tedunote.entity.User;
 import cn.tedu.tedunote.presenter.OnUserLoginListener;
 
@@ -9,13 +11,15 @@ import cn.tedu.tedunote.presenter.OnUserLoginListener;
  */
 public interface IUserModel {
 
-    void login(String username, String password, OnUserLoginListener onUserLoginListener);
+    void login(Context context, String username, String password, OnUserLoginListener onUserLoginListener);
 
     void loginByWeiXin(OnUserLoginListener onUserLoginListener);
 
     void loginByWeiBo(OnUserLoginListener onUserLoginListener);
 
     void register(String username, String nickname, String password, OnUserRegisterListener onUserRegisterListener);
+
+
 
     interface OnUserRegisterListener {
 

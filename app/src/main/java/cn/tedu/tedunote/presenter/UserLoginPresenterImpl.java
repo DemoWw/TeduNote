@@ -1,5 +1,6 @@
 package cn.tedu.tedunote.presenter;
 
+import android.content.Context;
 import android.support.annotation.Nullable;
 
 import cn.tedu.tedunote.entity.ResponseBody;
@@ -24,7 +25,7 @@ class UserLoginPresenterImpl implements IUserLoginPresenter {
     }
 
     @Override
-    public void login(String username, String password) {
+    public void login(Context context, String username, String password) {
         // Presenter固定特性：业务逻辑判断
         // 验证数据的有效性
         int checkResult = TextValidator.checkUsername(username);
@@ -40,7 +41,7 @@ class UserLoginPresenterImpl implements IUserLoginPresenter {
             return;
         }
         // Presenter固定特性：调用model中的功能
-        model.login(username, password, this);
+        model.login(context, username, password, this);
     }
 
     @Override

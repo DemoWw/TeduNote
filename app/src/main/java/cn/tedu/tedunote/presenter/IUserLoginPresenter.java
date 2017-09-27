@@ -1,5 +1,7 @@
 package cn.tedu.tedunote.presenter;
 
+import android.content.Context;
+
 /**
  * User Presenter
  * Created by tarena on 2017/9/23.
@@ -10,7 +12,7 @@ public interface IUserLoginPresenter extends OnUserLoginListener {
      * @param username 用户名
      * @param password 密码
      */
-    void login(String username, String password);
+    void login(Context context, String username, String password);
 
     /**
      * 通过微信登录
